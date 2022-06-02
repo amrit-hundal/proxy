@@ -59,7 +59,7 @@ ADD cli.ini /root/.config/letsencrypt/
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-HEALTHCHECK --interval=3s --timeout=3s --start-period=2s --retries=30 CMD curl --fail --silent http://127.0.0.1:80 || exit 1
+HEALTHCHECK --interval=3s --timeout=3s --start-period=2s --retries=30 CMD curl --fail --silent http://127.0.0.1:8008 || exit 1
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["run"]
